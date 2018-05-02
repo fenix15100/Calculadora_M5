@@ -91,18 +91,24 @@ public class Calculator {
 			evaluateExpression();
 			
 			switch (this.operador) {
-			case "+":
-				this.setResult(Addition.result(op1, op2));
-				break;
-			case "-":
-				this.setResult(Subtraction.result(op1, op2));
-				break;
+				case "+":
+					this.setResult(Addition.result(op1, op2));
+					break;
+				case "-":
+					this.setResult(Subtraction.result(op1, op2));
+					break;
+				case "*":
+					this.setResult(Product.result(op1, op2));
+					break;
+				case "/":
+					this.setResult(Division.result(op1, op2));
+					break;
+					
+					
 				
-				
-			
-			default:
-				
-				break;
+				default:
+					
+					break;
 			}
 			
 		} catch (Exception e) {
