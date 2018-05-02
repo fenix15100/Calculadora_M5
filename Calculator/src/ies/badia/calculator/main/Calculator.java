@@ -1,7 +1,7 @@
 /**
  * Clase utilizada para interpretar una expresion matematica
  * Recibe por parametro la expresion y se encarga de desglosarla
- * en 2 operadores y su operador
+ * en 2 operadores y su operador y es capaz de calcular el resultado
  * 
  */
 package ies.badia.calculator.main;
@@ -34,32 +34,37 @@ public class Calculator {
 	/**
 	 * @throws Exception
 	 */
-	private void evaluateExpression() throws Exception {
+	private int evaluateExpression() throws Exception {
 		if(expresion.contains("+")) {
 			String[] cadena=expresion.split("\\+");
 			op1=cadena[0];
 			op2=cadena[1];
 			operador="+";
+			return 0;
 			
 		}else if(expresion.contains("-")){
 			String[] cadena=expresion.split("\\-");
 			op1=cadena[0];
 			op2=cadena[1];
 			operador="-";
+			return 0;
 			
 		}else if(expresion.contains("*")) {
 			String[] cadena=expresion.split("\\*");
 			op1=cadena[0];
 			op2=cadena[1];
 			operador="*";
+			return 0;
 		}else if(expresion.contains("/")) {
 			String[] cadena=expresion.split("\\/");
 			op1=cadena[0];
 			op2=cadena[1];
 			operador="/";
+			return 0;
 			
 		}else {
 			throw new Exception("SintaxError");
+			
 		}
 	}
 	
