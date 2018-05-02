@@ -103,7 +103,9 @@ public class Calculator {
 				case "/":
 					this.setResult(Division.result(op1, op2));
 					break;
-					
+				case "%":
+					this.setResult(Residus.result(op1, op2));
+					break;
 					
 				
 				default:
@@ -111,8 +113,10 @@ public class Calculator {
 					break;
 			}
 			
-		} catch (Exception e) {
+		} catch (IllegalArgumentException e) {
+			System.err.println(e.getMessage());
 			
+		} catch (Exception e) {
 			System.err.println(e.getMessage());
 		}
 		
