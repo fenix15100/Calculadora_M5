@@ -17,15 +17,24 @@ public class Calculator {
 	private String op1;
 	private String operador;
 	private String op2;
+	private String expresion;
 	private int result;
 	
 	
 	/**
-	 * 
 	 * @param expresion
-	 * @throws Exception 
 	 */
-	public Calculator(String expresion) throws Exception {
+	public Calculator(String expresion){
+		
+		this.expresion=expresion;
+			
+	}
+
+
+	/**
+	 * @throws Exception
+	 */
+	private void evaluateExpression() throws Exception {
 		if(expresion.contains("+")) {
 			String[] cadena=expresion.split("\\+");
 			op1=cadena[0];
@@ -52,8 +61,6 @@ public class Calculator {
 		}else {
 			throw new Exception("SintaxError");
 		}
-		
-		
 	}
 	
 	
@@ -63,20 +70,30 @@ public class Calculator {
 	 * Guarda el resultado en la propiedad this.result
 	 */
 	public void operate() {
-		switch (this.operador) {
-		case "+":
-			this.setResult(Addition.result(op1, op2));
-			break;
-		case "-":
-			this.setResult(Subtraction.result(op1, op2));
-			break;
-			
-			
 		
-		default:
+		try {
+			evaluateExpression();
 			
-			break;
+			switch (this.operador) {
+			case "+":
+				this.setResult(Addition.result(op1, op2));
+				break;
+			case "-":
+				this.setResult(Subtraction.result(op1, op2));
+				break;
+				
+				
+			
+			default:
+				
+				break;
+			}
+			
+		} catch (Exception e) {
+			
+			System.err.println(e.getMessage());
 		}
+		
 		
 	}
 
