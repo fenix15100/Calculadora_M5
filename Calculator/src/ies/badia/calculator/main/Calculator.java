@@ -33,6 +33,7 @@ public class Calculator {
 
 	/**
 	 * @throws Exception
+	 * 
 	 */
 	private int evaluateExpression() throws Exception {
 		if(expresion.contains("+")) {
@@ -61,6 +62,16 @@ public class Calculator {
 			op2=cadena[1];
 			operador="/";
 			return 0;
+			
+			
+		}else if(expresion.contains("%")) {
+			
+			String[] cadena=expresion.split("\\%");
+			op1=cadena[0];
+			op2=cadena[1];
+			operador="%";
+			return 0;
+			
 			
 		}else {
 			throw new Exception("SintaxError");
