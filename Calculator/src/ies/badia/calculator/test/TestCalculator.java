@@ -47,5 +47,38 @@ public int expected;
 		assertEquals(expected, result);
 		
 	}
+	
+	@Test
+	public void testOperateProduct() {
+		Calculator c=new Calculator("4*2");
+		c.operate();
+		result=c.getResult();
+		expected=8;
+		assertEquals(expected, result);
+		
+	}
+	
+	
+	@Test
+	public void testOperateResidus() {
+		Calculator c=new Calculator("4%2");
+		c.operate();
+		result=c.getResult();
+		expected=0;
+		assertEquals(expected, result);
+		
+	}
+	
+	
+	@Test
+	public void testOperateSubtraction() {
+		Calculator c=new Calculator("4-2");
+		c.operate();
+		result=c.getResult();
+		expected=2;
+		assertEquals(expected, result);
+		
+	}
+
 
 }
