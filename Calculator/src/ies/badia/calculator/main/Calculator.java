@@ -14,15 +14,37 @@ package ies.badia.calculator.main;
  */
 public class Calculator {
 
+	/**
+	 * Propiedad que contendra el operando 1 de la calculadora
+	 */
 	private String op1;
+	
+	
+	/**
+	 * Propiedad que contendra el operador de la calculadora
+	 */
 	private String operador;
+	
+	/**
+	 * Propiedad que contendra el operando 2 de la calculadora
+	 */
 	private String op2;
+	
+	/**
+	 * Propiedad que contendra la expresion aritmetica que se quiere calcular
+	 */
 	private String expresion;
+	
+	/**
+	 * Propiedad que contendra el resultado del calculo aritmetico
+	 */
 	private int result;
 	
 	
 	/**
 	 * @param expresion
+	 * La expresion tiene que cumplir la sintaxis siguiente:
+	 * num1[+,*,-,/,%]num2
 	 */
 	public Calculator(String expresion){
 		
@@ -31,9 +53,11 @@ public class Calculator {
 	}
 
 
-	/**
+	/**Evalua la expresion aritmetica pasada al constructor, 
+	 * si esta es valida la desglosa y setea las variables de la clase.
+	 *
 	 * @throws Exception
-	 * 
+	 * Cuando la Expresion no es valida
 	 */
 	public int evaluateExpression() throws Exception {
 		
@@ -94,19 +118,19 @@ public class Calculator {
 			
 			switch (this.operador) {
 				case "+":
-					this.setResult(Addition.result(op1, op2));
+					result=Addition.result(op1, op2);
 					break;
 				case "-":
-					this.setResult(Subtraction.result(op1, op2));
+					result=Subtraction.result(op1, op2);
 					break;
 				case "*":
-					this.setResult(Product.result(op1, op2));
+					result=Product.result(op1, op2);
 					break;
 				case "/":
-					this.setResult(Division.result(op1, op2));
+					result=Division.result(op1, op2);
 					break;
 				case "%":
-					this.setResult(Residus.result(op1, op2));
+					result=Residus.result(op1, op2);
 					break;
 		
 			}
@@ -123,51 +147,12 @@ public class Calculator {
 	}
 
 
-	public String getOp1() {
-		return op1;
-	}
-
-
-	public void setOp1(String op1) {
-		this.op1 = op1;
-	}
-
-
-	public String getOperador() {
-		return operador;
-	}
-
-
-	public void setOperador(String operador) {
-		this.operador = operador;
-	}
-
-
-	public String getOp2() {
-		return op2;
-	}
-
-
-	public void setOp2(String op2) {
-		this.op2 = op2;
-	}
-
-
 
 	public int getResult() {
 		return result;
 	}
 
-
-
-	public void setResult(int result) {
-		this.result = result;
-	}
 	
-		
-		
-		
-		
 		
 }
 

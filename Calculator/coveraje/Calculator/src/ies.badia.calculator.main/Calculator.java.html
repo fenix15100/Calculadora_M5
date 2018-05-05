@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Calculator.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestCoveraje (05-may-2018 14:30:00)</a> &gt; <a href="../../index.html" class="el_group">Calculator</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">ies.badia.calculator.main</a> &gt; <span class="el_source">Calculator.java</span></div><h1>Calculator.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Calculator.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestCoveraje (05-may-2018 18:53:39)</a> &gt; <a href="../../index.html" class="el_group">Calculator</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">ies.badia.calculator.main</a> &gt; <span class="el_source">Calculator.java</span></div><h1>Calculator.java</h1><pre class="source lang-java linenums">/**
  * Clase utilizada para interpretar una expresion matematica
  * Recibe por parametro la expresion y se encarga de desglosarla
  * en 2 operadores y su operador y es capaz de calcular el resultado
@@ -94,19 +94,19 @@ public class Calculator {
 			
 <span class="pc bpc" id="L95" title="6 of 16 branches missed.">			switch (this.operador) {</span>
 				case &quot;+&quot;:
-<span class="fc" id="L97">					this.setResult(Addition.result(op1, op2));</span>
+<span class="fc" id="L97">					result=Addition.result(op1, op2);</span>
 <span class="fc" id="L98">					break;</span>
 				case &quot;-&quot;:
-<span class="fc" id="L100">					this.setResult(Subtraction.result(op1, op2));</span>
+<span class="fc" id="L100">					result=Subtraction.result(op1, op2);</span>
 <span class="fc" id="L101">					break;</span>
 				case &quot;*&quot;:
-<span class="fc" id="L103">					this.setResult(Product.result(op1, op2));</span>
+<span class="fc" id="L103">					result=Product.result(op1, op2);</span>
 <span class="fc" id="L104">					break;</span>
 				case &quot;/&quot;:
-<span class="fc" id="L106">					this.setResult(Division.result(op1, op2));</span>
+<span class="fc" id="L106">					result=Division.result(op1, op2);</span>
 <span class="fc" id="L107">					break;</span>
 				case &quot;%&quot;:
-<span class="fc" id="L109">					this.setResult(Residus.result(op1, op2));</span>
+<span class="fc" id="L109">					result=Residus.result(op1, op2);</span>
 					break;
 		
 			}
@@ -123,53 +123,14 @@ public class Calculator {
 <span class="fc" id="L123">	}</span>
 
 
-	public String getOp1() {
-<span class="fc" id="L127">		return op1;</span>
-	}
-
-
-	public void setOp1(String op1) {
-<span class="fc" id="L132">		this.op1 = op1;</span>
-<span class="fc" id="L133">	}</span>
-
-
-	public String getOperador() {
-<span class="fc" id="L137">		return operador;</span>
-	}
-
-
-	public void setOperador(String operador) {
-<span class="fc" id="L142">		this.operador = operador;</span>
-<span class="fc" id="L143">	}</span>
-
-
-	public String getOp2() {
-<span class="fc" id="L147">		return op2;</span>
-	}
-
-
-	public void setOp2(String op2) {
-<span class="fc" id="L152">		this.op2 = op2;</span>
-<span class="fc" id="L153">	}</span>
-
-
 
 	public int getResult() {
-<span class="fc" id="L158">		return result;</span>
+<span class="fc" id="L128">		return result;</span>
 	}
 
-
-
-	public void setResult(int result) {
-<span class="fc" id="L164">		this.result = result;</span>
-<span class="fc" id="L165">	}</span>
 	
-		
-		
-		
-		
 		
 }
 
 
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>TestCoveraje (05-may-2018 14:30:00)</div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>TestCoveraje (05-may-2018 18:53:39)</div></body></html>

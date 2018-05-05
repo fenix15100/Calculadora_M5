@@ -10,6 +10,16 @@ package ies.badia.calculator.main;
  *
  */
 public class Subtraction {
+	
+	/**
+	 * 
+	 * @param op1
+	 * Primer operador
+	 * @param op2
+	 * Segundo operador
+	 * @return 
+	 * La resta de @param op1 y @param op2
+	 */
 	public static int result(String op1,String op2) {
 		
 		int o1=0;

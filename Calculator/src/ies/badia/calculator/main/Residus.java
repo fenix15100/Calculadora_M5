@@ -12,7 +12,15 @@ package ies.badia.calculator.main;
  */
 public class Residus {
 	
-	
+	/**
+	 * 
+	 * @param op1
+	 * Primer operador
+	 * @param op2
+	 * Segundo operador
+	 * @return 
+	 * El Resto de @param op1 y @param op2
+	 */
 	public static int result(String op1,String op2) {
 		
 		int o1=0;

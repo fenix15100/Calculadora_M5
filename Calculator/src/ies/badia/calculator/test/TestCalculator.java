@@ -27,25 +27,9 @@ public int expected;
 
 	/**
 	 * Test method for {@link ies.badia.calculator.main.Calculator#operate()}.
-	 * @throws Exception 
+	 *  
 	 */
 
-	@Test
-	public void testOperateGettersSetters() throws Exception {
-		Calculator c=new Calculator("64+4");
-		
-		c.evaluateExpression();
-		c.setOp1("5");
-		c.setOp2("6");
-		c.setOperador("*");
-		System.out.println(c.getOp1()+c.getOp2()+c.getOperador());
-		
-		c.operate();
-		result=c.getResult();
-		expected=68;
-		assertEquals(expected, result);
-		
-	}
 	
 	
 	@Test

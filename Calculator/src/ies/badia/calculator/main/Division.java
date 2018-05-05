@@ -12,7 +12,15 @@ package ies.badia.calculator.main;
  */
 public class Division {
 	
-	
+	/**
+	 * 
+	 * @param op1
+	 * Primer operador
+	 * @param op2
+	 * Segundo operador
+	 * @return 
+	 * La Division entera de @param op1 y @param op2
+	 */
 	public static int result(String op1,String op2) throws Exception {
 		
 		int o1=0;
