@@ -35,7 +35,9 @@ public class Calculator {
 	 * @throws Exception
 	 * 
 	 */
-	private int evaluateExpression() throws Exception {
+	public int evaluateExpression() throws Exception {
+		
+		
 		if(expresion.contains("+")) {
 			String[] cadena=expresion.split("\\+");
 			op1=cadena[0];
@@ -106,12 +108,9 @@ public class Calculator {
 				case "%":
 					this.setResult(Residus.result(op1, op2));
 					break;
-					
-				
-				default:
-					
-					break;
+		
 			}
+			
 			
 		} catch (IllegalArgumentException e) {
 			System.err.println(e.getMessage());

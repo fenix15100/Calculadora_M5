@@ -27,7 +27,27 @@ public int expected;
 
 	/**
 	 * Test method for {@link ies.badia.calculator.main.Calculator#operate()}.
+	 * @throws Exception 
 	 */
+
+	@Test
+	public void testOperateGettersSetters() throws Exception {
+		Calculator c=new Calculator("64+4");
+		
+		c.evaluateExpression();
+		c.setOp1("5");
+		c.setOp2("6");
+		c.setOperador("*");
+		System.out.println(c.getOp1()+c.getOp2()+c.getOperador());
+		
+		c.operate();
+		result=c.getResult();
+		expected=68;
+		assertEquals(expected, result);
+		
+	}
+	
+	
 	@Test
 	public void testOperateAddition() {
 		Calculator c=new Calculator("64+4");
@@ -39,12 +59,40 @@ public int expected;
 	}
 	
 	@Test
+	public void testOperateAddition2() {
+		Calculator c=new Calculator("4+4.66");
+		c.operate();
+		result=c.getResult();
+		expected=2;
+		assertNotEquals(expected, result);
+		
+	}
+	
+	@Test
 	public void testOperateDivision() {
 		Calculator c=new Calculator("4/2");
 		c.operate();
 		result=c.getResult();
 		expected=2;
 		assertEquals(expected, result);
+		
+	}
+	
+	@Test
+	public void testOperateDivision2() {
+		Calculator c=new Calculator("4/0");
+		c.operate();
+		result=c.getResult();
+		assertNotEquals(new Exception(), result);
+		
+	}
+	
+	@Test
+	public void testOperateDivision3() {
+		Calculator c=new Calculator("4/4.66");
+		c.operate();
+		result=c.getResult();
+		assertNotEquals(new Exception(), result);
 		
 	}
 	
@@ -69,6 +117,25 @@ public int expected;
 		
 	}
 	
+	@Test
+	public void testOperateResidus2() {
+		Calculator c=new Calculator("4%0");
+		c.operate();
+		result=c.getResult();
+		
+		assertNotEquals(new IllegalArgumentException(), result);
+		
+	}
+	@Test
+	public void testOperateResidus3() {
+		Calculator c=new Calculator("4%1.5");
+		c.operate();
+		result=c.getResult();
+		
+		assertNotEquals(new NumberFormatException(), result);
+		
+	}
+	
 	
 	@Test
 	public void testOperateSubtraction() {
@@ -79,6 +146,29 @@ public int expected;
 		assertEquals(expected, result);
 		
 	}
+	
+	
+	@Test
+	public void testOperateSubtraction2() {
+		Calculator c=new Calculator("4-1.5");
+		c.operate();
+		result=c.getResult();
+		
+		assertNotEquals(new NumberFormatException(), result);
+		
+	}
+	
+	
+	@Test
+	public void testevaluateexpresion() {
+		Calculator c=new Calculator("4?1.5");
+		c.operate();
+		result=c.getResult();
+		assertNotEquals(new Exception(), result);
+		
+	}
+	
+	
 
 
 }

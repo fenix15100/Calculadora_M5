@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>TestResidus.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestCoveraje (05-may-2018 14:30:00)</a> &gt; <a href="../../index.html" class="el_group">Calculator</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">ies.badia.calculator.test</a> &gt; <span class="el_source">TestResidus.java</span></div><h1>TestResidus.java</h1><pre class="source lang-java linenums">/**
+ * Test Junit4 comprueba que el modulo divide dos operadores tipo string devolviendo un entero
+ */
+package ies.badia.calculator.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.junit.runners.Parameterized.Parameter;
+
+import ies.badia.calculator.main.Residus;
+
+/**
+ * @author Francisco Jose Camacho Maya
+ * 
+ */
+
+<span class="fc" id="L18">public class TestResidus {</span>
+	
+
+@Parameter(0)
+public int result;
+
+@Parameter(1)
+public int expected;
+
+	/**
+	 * Test method for {@link ies.badia.calculator.main.Residus#result(java.lang.String, java.lang.String)}.
+	 */
+	@Test
+	public void testResult() {
+<span class="fc" id="L32">		String op1=&quot;5&quot;;</span>
+<span class="fc" id="L33">		String op2=&quot;3&quot;;</span>
+		
+<span class="fc" id="L35">		result=Residus.result(op1, op2);</span>
+<span class="fc" id="L36">		expected=2;</span>
+<span class="fc" id="L37">		assertEquals(expected, result);</span>
+		
+<span class="fc" id="L39">	}</span>
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>TestCoveraje (05-may-2018 14:30:00)</div></body></html>

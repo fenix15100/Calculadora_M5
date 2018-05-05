@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>TestCalculator.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">TestCoveraje (05-may-2018 14:30:00)</a> &gt; <a href="../../index.html" class="el_group">Calculator</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">ies.badia.calculator.test</a> &gt; <span class="el_source">TestCalculator.java</span></div><h1>TestCalculator.java</h1><pre class="source lang-java linenums">/**
+ * Test Junit4 comprueba que el modulo Operate de Calculator funciona correctamente
+ * 
+ */
+package ies.badia.calculator.test;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+import org.junit.runners.Parameterized.Parameter;
+
+import ies.badia.calculator.main.Calculator;
+
+/**
+ * @author Francisco Jose Camacho Maya
+ * 
+ */
+
+<span class="fc" id="L19">public class TestCalculator {</span>
+	
+
+@Parameter(0)
+public int result;
+
+@Parameter(1)
+public int expected;
+
+	/**
+	 * Test method for {@link ies.badia.calculator.main.Calculator#operate()}.
+	 * @throws Exception 
+	 */
+
+	@Test
+	public void testOperateGettersSetters() throws Exception {
+<span class="fc" id="L35">		Calculator c=new Calculator(&quot;64+4&quot;);</span>
+		
+<span class="fc" id="L37">		c.evaluateExpression();</span>
+<span class="fc" id="L38">		c.setOp1(&quot;5&quot;);</span>
+<span class="fc" id="L39">		c.setOp2(&quot;6&quot;);</span>
+<span class="fc" id="L40">		c.setOperador(&quot;*&quot;);</span>
+<span class="fc" id="L41">		System.out.println(c.getOp1()+c.getOp2()+c.getOperador());</span>
+		
+<span class="fc" id="L43">		c.operate();</span>
+<span class="fc" id="L44">		result=c.getResult();</span>
+<span class="fc" id="L45">		expected=68;</span>
+<span class="fc" id="L46">		assertEquals(expected, result);</span>
+		
+<span class="fc" id="L48">	}</span>
+	
+	
+	@Test
+	public void testOperateAddition() {
+<span class="fc" id="L53">		Calculator c=new Calculator(&quot;64+4&quot;);</span>
+<span class="fc" id="L54">		c.operate();</span>
+<span class="fc" id="L55">		result=c.getResult();</span>
+<span class="fc" id="L56">		expected=68;</span>
+<span class="fc" id="L57">		assertEquals(expected, result);</span>
+		
+<span class="fc" id="L59">	}</span>
+	
+	@Test
+	public void testOperateAddition2() {
+<span class="fc" id="L63">		Calculator c=new Calculator(&quot;4+4.66&quot;);</span>
+<span class="fc" id="L64">		c.operate();</span>
+<span class="fc" id="L65">		result=c.getResult();</span>
+<span class="fc" id="L66">		expected=2;</span>
+<span class="fc" id="L67">		assertNotEquals(expected, result);</span>
+		
+<span class="fc" id="L69">	}</span>
+	
+	@Test
+	public void testOperateDivision() {
+<span class="fc" id="L73">		Calculator c=new Calculator(&quot;4/2&quot;);</span>
+<span class="fc" id="L74">		c.operate();</span>
+<span class="fc" id="L75">		result=c.getResult();</span>
+<span class="fc" id="L76">		expected=2;</span>
+<span class="fc" id="L77">		assertEquals(expected, result);</span>
+		
+<span class="fc" id="L79">	}</span>
+	
+	@Test
+	public void testOperateDivision2() {
+<span class="fc" id="L83">		Calculator c=new Calculator(&quot;4/0&quot;);</span>
+<span class="fc" id="L84">		c.operate();</span>
+<span class="fc" id="L85">		result=c.getResult();</span>
+<span class="fc" id="L86">		assertNotEquals(new Exception(), result);</span>
+		
+<span class="fc" id="L88">	}</span>
+	
+	@Test
+	public void testOperateDivision3() {
+<span class="fc" id="L92">		Calculator c=new Calculator(&quot;4/4.66&quot;);</span>
+<span class="fc" id="L93">		c.operate();</span>
+<span class="fc" id="L94">		result=c.getResult();</span>
+<span class="fc" id="L95">		assertNotEquals(new Exception(), result);</span>
+		
+<span class="fc" id="L97">	}</span>
+	
+	@Test
+	public void testOperateProduct() {
+<span class="fc" id="L101">		Calculator c=new Calculator(&quot;4*2&quot;);</span>
+<span class="fc" id="L102">		c.operate();</span>
+<span class="fc" id="L103">		result=c.getResult();</span>
+<span class="fc" id="L104">		expected=8;</span>
+<span class="fc" id="L105">		assertEquals(expected, result);</span>
+		
+<span class="fc" id="L107">	}</span>
+	
+	
+	@Test
+	public void testOperateResidus() {
+<span class="fc" id="L112">		Calculator c=new Calculator(&quot;4%2&quot;);</span>
+<span class="fc" id="L113">		c.operate();</span>
+<span class="fc" id="L114">		result=c.getResult();</span>
+<span class="fc" id="L115">		expected=0;</span>
+<span class="fc" id="L116">		assertEquals(expected, result);</span>
+		
+<span class="fc" id="L118">	}</span>
+	
+	@Test
+	public void testOperateResidus2() {
+<span class="fc" id="L122">		Calculator c=new Calculator(&quot;4%0&quot;);</span>
+<span class="fc" id="L123">		c.operate();</span>
+<span class="fc" id="L124">		result=c.getResult();</span>
+		
+<span class="fc" id="L126">		assertNotEquals(new IllegalArgumentException(), result);</span>
+		
+<span class="fc" id="L128">	}</span>
+	@Test
+	public void testOperateResidus3() {
+<span class="fc" id="L131">		Calculator c=new Calculator(&quot;4%1.5&quot;);</span>
+<span class="fc" id="L132">		c.operate();</span>
+<span class="fc" id="L133">		result=c.getResult();</span>
+		
+<span class="fc" id="L135">		assertNotEquals(new NumberFormatException(), result);</span>
+		
+<span class="fc" id="L137">	}</span>
+	
+	
+	@Test
+	public void testOperateSubtraction() {
+<span class="fc" id="L142">		Calculator c=new Calculator(&quot;4-2&quot;);</span>
+<span class="fc" id="L143">		c.operate();</span>
+<span class="fc" id="L144">		result=c.getResult();</span>
+<span class="fc" id="L145">		expected=2;</span>
+<span class="fc" id="L146">		assertEquals(expected, result);</span>
+		
+<span class="fc" id="L148">	}</span>
+	
+	
+	@Test
+	public void testOperateSubtraction2() {
+<span class="fc" id="L153">		Calculator c=new Calculator(&quot;4-1.5&quot;);</span>
+<span class="fc" id="L154">		c.operate();</span>
+<span class="fc" id="L155">		result=c.getResult();</span>
+		
+<span class="fc" id="L157">		assertNotEquals(new NumberFormatException(), result);</span>
+		
+<span class="fc" id="L159">	}</span>
+	
+	
+	@Test
+	public void testevaluateexpresion() {
+<span class="fc" id="L164">		Calculator c=new Calculator(&quot;4?1.5&quot;);</span>
+<span class="fc" id="L165">		c.operate();</span>
+<span class="fc" id="L166">		result=c.getResult();</span>
+<span class="fc" id="L167">		assertNotEquals(new Exception(), result);</span>
+		
+<span class="fc" id="L169">	}</span>
+	
+	
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>TestCoveraje (05-may-2018 14:30:00)</div></body></html>

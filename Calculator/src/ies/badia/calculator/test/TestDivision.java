@@ -27,9 +27,10 @@ public int expected;
 
 	/**
 	 * Test method for {@link ies.badia.calculator.main.Division#result(java.lang.String, java.lang.String)}.
+	 * @throws Exception 
 	 */
 	@Test
-	public void testResult() {
+	public void testResult() throws Exception {
 		String op1="8";
 		String op2="2";
 		
@@ -38,6 +39,10 @@ public int expected;
 		assertEquals(expected, result);
 		
 	}
+	
+	
+	
+    
 	
 
 }
